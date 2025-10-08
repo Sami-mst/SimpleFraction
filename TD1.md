@@ -33,40 +33,65 @@ En terme de *commits*, quelle différence constatez-vous entre cocher une (ou pl
 Vérifiez que le projet compile et s'exécute dans l'IDE;
 Validez les changements (cf. [Enregistrer des modifications dans le dépôt](https://git-scm.com/book/fr/v2/Les-bases-de-Git-Enregistrer-des-modifications-dans-le-d%C3%A9p%C3%B4t));
     ```bash
-    # Commandes pour valider les changements
+    # git add Main.java && git commit -m "ajout to Fraction"
     ```
 1. Ajoutez la méthode `toString` à la classe `Fraction` (cf. [`Object.toString`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Object.html#toString())) qui retournera la chaîne `"Je suis une fraction."` et modifiez la classe `Main` en conséquence;
 Validez les changements;
     ```Java
-    // Code pour tester toString
+    Fraction f1=new Fraction();
+    System.out.println(f1.toString());
     ```
 1. Publiez vos modifications sur le dépôt distant (cf. [Travailler avec des dépôts distants](https://git-scm.com/book/fr/v2/Les-bases-de-Git-Travailler-avec-des-d%C3%A9p%C3%B4ts-distants));
 Vous utiliserez le protocole `https` pour cela;
 Vérifiez avec le navigateur;
     ```bash
-    # Commandes pour publier les modifications
+    git push origin main
     ```
 1. Sur la forge, ajoutez un fichier de documentation `README.md`.
 Quelle syntaxe est utilisée pour ce fichier ?
-    > Répondre ici
+    > Mark down
 1. Récupérez localement les modifications effectuées sur la forge.
     ```bash
-    # Répondre ici
+    # git pull
     ```
 1. Ajoutez les répertoires et fichiers issus de la compilation aux fichiers ignorés par `git` (cf. [`.gitignore` pour Java](https://github.com/github/gitignore/blob/main/Java.gitignore));
     ```bash
-    # Copier ici le contenu de `.gitignore`
+            # Compiled class file
+        *.class
+
+        # Log file
+        *.log
+
+        # BlueJ files
+        *.ctxt
+
+        # Mobile Tools for Java (J2ME)
+        .mtj.tmp/
+
+        # Package Files #
+        *.jar
+        *.war
+        *.nar
+        *.ear
+        *.zip
+        *.tar.gz
+        *.rar
+
+        # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+        hs_err_pid*
+        replay_pid*
+
     ```
 1. Retirez les fichiers de configuration de l'IDE du projet;
     ```bash
-    # Répondre ici
+    # aucun
     ```
     Ajoutez-les aux fichiers ignorés par `git`.
     ```bash
     # Copier ici les modifications de `.gitignore`
     ```
 1. Configurez l'accès par clé publique/clé privée à la forge (cf. [Connecting to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)).
-    > Expliquez la procédure de façon synthétique
+    > je genere une pair clé personnel, je ajoute la clé publiquea mon compte github afin de l'associé au compte, puis je m'authentifie via ssh a mon compte github, cela permettera a github de m'authentifier
 
 ## Partie II (à faire durant le TD) : compléter la classe `Fraction`
 Dans cet partie, vous compléterez les classes `Fraction` et `Main`.
