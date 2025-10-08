@@ -103,7 +103,8 @@ Vous respecterez les consignes ci-dessous :
 
 1. Ajoutez les attributs représentants le numérateur et le dénominateur (nombres entiers).
     ```Java
-    // Déclaration des attributs
+    public int nominateur;
+    public int denominateur;
     ```
 1. Ajoutez les constructeurs (cf. [Constructor Declarations](https://docs.oracle.com/javase/specs/jls/se19/html/jls-8.html#jls-8.8)) suivants :
     * initialisation avec un numérateur et un dénominateur,
@@ -114,15 +115,21 @@ Vous respecterez les consignes ci-dessous :
     ```
 1. Ajoutez les fractions constantes ZERO (0, 1) et UN (1, 1) (cf. [Constants in Java](https://www.baeldung.com/java-constants-good-practices)),
     ```Java
-    // Déclaration des constantes
+    final Fraction ZERO=new Fraction(0,1);
+    final Fraction UN=new Fraction(1,1);
     ```
 1. Ajoutez une méthode de consultation du numérateur et du dénominateur (par convention, en Java, une méthode retournant la valeur de l'attribut `anAttribute` est nommée `getAnAttribute`),
     ```Java
-    // Définition des getters
+    public int getnumerateur(){
+        return numérateur;
+    }
+    public int getdenominateur(){
+        return denominateur;
+    }
     ```
 1. Ajoutez une méthode de consultation de la valeur sous la forme d'un nombre en virgule flottante (méthode `doubleValue()`) (cf. [`java.lang.Number`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Number.html)),
    ```Java
-    // Assertions pour tester la conversion
+    assert F1.getDoubleDenominateur() == 42.0 : "La conversion en double a échoué";
     ```
 1. Ajoutez une méthode permettant l'addition de deux fractions (la méthode `add` prend en paramètre *une* fraction et *retourne* la somme de la fraction courante et du paramètre),
    ```Java
